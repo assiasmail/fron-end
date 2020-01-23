@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Editer un employée</h1>
+<div mat-dialog-content>
+    <p></p>
+    <mat-form-field>
+        <input matInput [(ngModel)]="employe.nom" placeholder="Nom" >
+    </mat-form-field>
+    <mat-form-field> 
+        <input matInput [(ngModel)]="employe.prenom" placeholder="Prénom">
+    </mat-form-field>
+    <mat-form-field class="adresse">
+        <input matInput [(ngModel)]="employe.adresse" placeholder="Adresse">
+    </mat-form-field>
+    <mat-form-field >
+            <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="employe.dateNaissance" placeholder="Date naissance">
+            <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field >
+            <input matInput [matDatepicker]="myDatepicker2" [(ngModel)]="employe.dateEntree"  placeholder="Date entrée">
+            <mat-datepicker-toggle [for]="myDatepicker2"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker2></mat-datepicker>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button (click)=saveOrUpdate() mat-dialog-close cdkFocusInitial>Enregistrer</button>
+</div>
